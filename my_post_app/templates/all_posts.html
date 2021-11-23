@@ -24,7 +24,11 @@
       <td><a href="{%url 'detail' post.id%}">{{post.name}}</a></td>
       <td>{{post.description}}</td>
       <td>{{post.created_date}}</td>
-      <td>{{post.hashtag.all}}</td>
+      <td>
+      {%for hash in post.hashtag.all%}
+      {{hash}}
+      {%endfor%}
+      </td>
       <td><img src="{{post.post_image.first}}" height="100"  width="100"></td>
     </tr>
   {% endfor %}
